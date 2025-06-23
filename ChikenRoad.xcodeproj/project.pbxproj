@@ -6,17 +6,49 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		863172122E0971D9004BA21F /* ChickenCustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172082E0971D9004BA21F /* ChickenCustomButtons.swift */; };
+		863172132E0971D9004BA21F /* ChikenRoadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631720F2E0971D9004BA21F /* ChikenRoadApp.swift */; };
+		863172152E0971D9004BA21F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8631720C2E0971D9004BA21F /* Preview Assets.xcassets */; };
+		863172162E0971D9004BA21F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8631720E2E0971D9004BA21F /* Assets.xcassets */; };
+		8631721E2E0971F7004BA21F /* ChikenTextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8631721B2E0971F7004BA21F /* ChikenTextExtension.swift */; };
+		8631729F2E097233004BA21F /* Alata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8631729E2E097233004BA21F /* Alata-Regular.ttf */; };
+		863172AC2E097298004BA21F /* ChikenOnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172A82E097298004BA21F /* ChikenOnboardingModel.swift */; };
+		863172AD2E097298004BA21F /* ChikenOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172A92E097298004BA21F /* ChikenOnboardingView.swift */; };
+		863172AE2E097298004BA21F /* ChikenOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172AA2E097298004BA21F /* ChikenOnboardingViewModel.swift */; };
+		863172BA2E09781C004BA21F /* ChikenMainModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172B62E09781C004BA21F /* ChikenMainModel.swift */; };
+		863172BB2E09781C004BA21F /* ChikenMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172B72E09781C004BA21F /* ChikenMainView.swift */; };
+		863172BC2E09781C004BA21F /* ChikenMainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172B82E09781C004BA21F /* ChikenMainViewModel.swift */; };
+		863172C82E098475004BA21F /* ChikenSettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172C42E098475004BA21F /* ChikenSettingsModel.swift */; };
+		863172C92E098475004BA21F /* ChikenSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172C52E098475004BA21F /* ChikenSettingsView.swift */; };
+		863172CA2E098475004BA21F /* ChikenSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863172C62E098475004BA21F /* ChikenSettingsViewModel.swift */; };
+		8631734B2E099262004BA21F /* ChikenGalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863173472E099262004BA21F /* ChikenGalleryModel.swift */; };
+		8631734C2E099262004BA21F /* ChikenGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863173482E099262004BA21F /* ChikenGalleryView.swift */; };
+		8631734D2E099262004BA21F /* ChikenGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863173492E099262004BA21F /* ChikenGalleryViewModel.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		863171F22E097109004BA21F /* ChikenRoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChikenRoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		863172082E0971D9004BA21F /* ChickenCustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChickenCustomButtons.swift; sourceTree = "<group>"; };
+		8631720C2E0971D9004BA21F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8631720E2E0971D9004BA21F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8631720F2E0971D9004BA21F /* ChikenRoadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenRoadApp.swift; sourceTree = "<group>"; };
+		8631721B2E0971F7004BA21F /* ChikenTextExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenTextExtension.swift; sourceTree = "<group>"; };
+		8631729E2E097233004BA21F /* Alata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Alata-Regular.ttf"; sourceTree = "<group>"; };
+		863172A02E09724C004BA21F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		863172A82E097298004BA21F /* ChikenOnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenOnboardingModel.swift; sourceTree = "<group>"; };
+		863172A92E097298004BA21F /* ChikenOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenOnboardingView.swift; sourceTree = "<group>"; };
+		863172AA2E097298004BA21F /* ChikenOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenOnboardingViewModel.swift; sourceTree = "<group>"; };
+		863172B62E09781C004BA21F /* ChikenMainModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenMainModel.swift; sourceTree = "<group>"; };
+		863172B72E09781C004BA21F /* ChikenMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenMainView.swift; sourceTree = "<group>"; };
+		863172B82E09781C004BA21F /* ChikenMainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenMainViewModel.swift; sourceTree = "<group>"; };
+		863172C42E098475004BA21F /* ChikenSettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenSettingsModel.swift; sourceTree = "<group>"; };
+		863172C52E098475004BA21F /* ChikenSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenSettingsView.swift; sourceTree = "<group>"; };
+		863172C62E098475004BA21F /* ChikenSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenSettingsViewModel.swift; sourceTree = "<group>"; };
+		863173472E099262004BA21F /* ChikenGalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenGalleryModel.swift; sourceTree = "<group>"; };
+		863173482E099262004BA21F /* ChikenGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenGalleryView.swift; sourceTree = "<group>"; };
+		863173492E099262004BA21F /* ChikenGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenGalleryViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		863171F42E097109004BA21F /* ChikenRoad */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ChikenRoad;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		863171EF2E097109004BA21F /* Frameworks */ = {
@@ -32,7 +64,7 @@
 		863171E92E097109004BA21F = {
 			isa = PBXGroup;
 			children = (
-				863171F42E097109004BA21F /* ChikenRoad */,
+				863172112E0971D9004BA21F /* ChikenRoad */,
 				863171F32E097109004BA21F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +75,112 @@
 				863171F22E097109004BA21F /* ChikenRoad.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		863172092E0971D9004BA21F /* ChickenCustomButtons */ = {
+			isa = PBXGroup;
+			children = (
+				863172082E0971D9004BA21F /* ChickenCustomButtons.swift */,
+			);
+			path = ChickenCustomButtons;
+			sourceTree = "<group>";
+		};
+		8631720A2E0971D9004BA21F /* ChikenFonts */ = {
+			isa = PBXGroup;
+			children = (
+				8631729E2E097233004BA21F /* Alata-Regular.ttf */,
+			);
+			path = ChikenFonts;
+			sourceTree = "<group>";
+		};
+		8631720B2E0971D9004BA21F /* ChikenHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				863172092E0971D9004BA21F /* ChickenCustomButtons */,
+				8631720A2E0971D9004BA21F /* ChikenFonts */,
+			);
+			path = ChikenHelpers;
+			sourceTree = "<group>";
+		};
+		8631720D2E0971D9004BA21F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8631720C2E0971D9004BA21F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		863172112E0971D9004BA21F /* ChikenRoad */ = {
+			isa = PBXGroup;
+			children = (
+				8631734A2E099262004BA21F /* ChikenGalleryModule */,
+				863172C72E098475004BA21F /* ChikenSettingsModule */,
+				863172B92E09781C004BA21F /* ChikenMainModule */,
+				863172AB2E097298004BA21F /* ChikenOnboardingModule */,
+				8631721D2E0971F7004BA21F /* ChikenExtensions */,
+				8631720B2E0971D9004BA21F /* ChikenHelpers */,
+				8631720D2E0971D9004BA21F /* Preview Content */,
+				8631720E2E0971D9004BA21F /* Assets.xcassets */,
+				8631720F2E0971D9004BA21F /* ChikenRoadApp.swift */,
+				863172A02E09724C004BA21F /* Info.plist */,
+			);
+			path = ChikenRoad;
+			sourceTree = "<group>";
+		};
+		8631721C2E0971F7004BA21F /* ChikenTextExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8631721B2E0971F7004BA21F /* ChikenTextExtension.swift */,
+			);
+			path = ChikenTextExtension;
+			sourceTree = "<group>";
+		};
+		8631721D2E0971F7004BA21F /* ChikenExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				8631721C2E0971F7004BA21F /* ChikenTextExtension */,
+			);
+			path = ChikenExtensions;
+			sourceTree = "<group>";
+		};
+		863172AB2E097298004BA21F /* ChikenOnboardingModule */ = {
+			isa = PBXGroup;
+			children = (
+				863172A82E097298004BA21F /* ChikenOnboardingModel.swift */,
+				863172A92E097298004BA21F /* ChikenOnboardingView.swift */,
+				863172AA2E097298004BA21F /* ChikenOnboardingViewModel.swift */,
+			);
+			path = ChikenOnboardingModule;
+			sourceTree = "<group>";
+		};
+		863172B92E09781C004BA21F /* ChikenMainModule */ = {
+			isa = PBXGroup;
+			children = (
+				863172B62E09781C004BA21F /* ChikenMainModel.swift */,
+				863172B72E09781C004BA21F /* ChikenMainView.swift */,
+				863172B82E09781C004BA21F /* ChikenMainViewModel.swift */,
+			);
+			path = ChikenMainModule;
+			sourceTree = "<group>";
+		};
+		863172C72E098475004BA21F /* ChikenSettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				863172C42E098475004BA21F /* ChikenSettingsModel.swift */,
+				863172C52E098475004BA21F /* ChikenSettingsView.swift */,
+				863172C62E098475004BA21F /* ChikenSettingsViewModel.swift */,
+			);
+			path = ChikenSettingsModule;
+			sourceTree = "<group>";
+		};
+		8631734A2E099262004BA21F /* ChikenGalleryModule */ = {
+			isa = PBXGroup;
+			children = (
+				863173472E099262004BA21F /* ChikenGalleryModel.swift */,
+				863173482E099262004BA21F /* ChikenGalleryView.swift */,
+				863173492E099262004BA21F /* ChikenGalleryViewModel.swift */,
+			);
+			path = ChikenGalleryModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +197,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				863171F42E097109004BA21F /* ChikenRoad */,
 			);
 			name = ChikenRoad;
 			packageProductDependencies = (
@@ -109,6 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8631729F2E097233004BA21F /* Alata-Regular.ttf in Resources */,
+				863172152E0971D9004BA21F /* Preview Assets.xcassets in Resources */,
+				863172162E0971D9004BA21F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +257,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				863172AC2E097298004BA21F /* ChikenOnboardingModel.swift in Sources */,
+				863172BA2E09781C004BA21F /* ChikenMainModel.swift in Sources */,
+				863172BB2E09781C004BA21F /* ChikenMainView.swift in Sources */,
+				863172BC2E09781C004BA21F /* ChikenMainViewModel.swift in Sources */,
+				8631734B2E099262004BA21F /* ChikenGalleryModel.swift in Sources */,
+				8631734C2E099262004BA21F /* ChikenGalleryView.swift in Sources */,
+				8631734D2E099262004BA21F /* ChikenGalleryViewModel.swift in Sources */,
+				863172AD2E097298004BA21F /* ChikenOnboardingView.swift in Sources */,
+				863172AE2E097298004BA21F /* ChikenOnboardingViewModel.swift in Sources */,
+				863172C82E098475004BA21F /* ChikenSettingsModel.swift in Sources */,
+				863172C92E098475004BA21F /* ChikenSettingsView.swift in Sources */,
+				863172CA2E098475004BA21F /* ChikenSettingsViewModel.swift in Sources */,
+				8631721E2E0971F7004BA21F /* ChikenTextExtension.swift in Sources */,
+				863172122E0971D9004BA21F /* ChickenCustomButtons.swift in Sources */,
+				863172132E0971D9004BA21F /* ChikenRoadApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,11 +408,13 @@
 				DEVELOPMENT_TEAM = 59WWFG63NN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChikenRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -267,6 +422,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.keshevv.ChikenRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -284,11 +443,13 @@
 				DEVELOPMENT_TEAM = 59WWFG63NN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ChikenRoad/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,6 +457,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.keshevv.ChikenRoad;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
