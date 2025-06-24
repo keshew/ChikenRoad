@@ -2,6 +2,10 @@ import SwiftUI
 
 struct ChikenSettingsView: View {
     @StateObject var chikenSettingsModel =  ChikenSettingsViewModel()
+    @State var isMenu = false
+    @Environment(\.presentationMode) var presentationMode
+    var userDefaultsManager = UserDefaultsManager()
+    @State var showResetAlert = false
     
     var body: some View {
         ZStack {
@@ -20,6 +24,9 @@ struct ChikenSettingsView: View {
                                         .foregroundStyle(.white)
                                 }
                                 .frame(width: 48, height: 48)
+                                .onTapGesture {
+                                    presentationMode.wrappedValue.dismiss()
+                                }
                             
                             Text("Settings")
                                 .Alata(size: 24)
@@ -44,28 +51,15 @@ struct ChikenSettingsView: View {
                                 }
                                 .padding(.horizontal)
                                 
-                                ZStack(alignment: .leading) {
-                                    Rectangle()
-                                        .fill(Color(red: 33/255, green: 37/255, blue: 54/255))
-                                        .frame(width: 340, height: 10)
-                                        .cornerRadius(10)
-                                        .padding(.horizontal)
-                                    
-                                    Rectangle()
-                                        .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
-                                        .frame(width: 140, height: 10)
-                                        .cornerRadius(10)
-                                        .padding(.horizontal)
-                                }
+                                ProgressBarView2(currentValue: CGFloat(UserDefaultsManager().getPoints()))
                                 
                                 HStack {
-                                    Text("50 / 200 XP")
+                                    Text("\(UserDefaultsManager().getPoints()) / 500 XP")
                                         .Alata(size: 12, color: Color(red: 163/255, green: 167/255, blue: 174/255))
                                     
                                     Spacer()
                                     
-                                    Text("50 XP to next level")
-                                        .Alata(size: 12, color: Color(red: 163/255, green: 167/255, blue: 174/255))
+                                    XPTextView()
                                 }
                                 .padding(.horizontal)
                             }
@@ -140,6 +134,9 @@ struct ChikenSettingsView: View {
                                     Text("Reset progress")
                                         .Alata(size: 14, color: Color(red: 248/255, green: 113/255, blue: 113/255))
                                         .padding(.leading, 5)
+                                        .onTapGesture {
+                                            showResetAlert = true
+                                        }
                                     
                                     Spacer()
                                     
@@ -158,6 +155,18 @@ struct ChikenSettingsView: View {
             }
             .scrollDisabled(UIScreen.main.bounds.width > 380  ? true : false)
         }
+        .fullScreenCover(isPresented: $isMenu, content: {
+            ChikenMainView()
+        })
+        .alert("Are you sure?", isPresented: $showResetAlert) {
+                 Button("Cancel", role: .cancel) { }
+                 Button("Reset", role: .destructive) {
+                     userDefaultsManager.clearAllKeys()
+                     isMenu = true
+                 }
+             } message: {
+                 Text("Do you want to clear all progress?")
+             }
     }
 }
 
@@ -185,5 +194,41 @@ struct CustomToggleStyle: ToggleStyle {
                 }
         }
         .padding()
+    }
+}
+
+struct XPTextView: View {
+    let maxXP = 500
+    let manager = UserDefaultsManager()
+    
+    var body: some View {
+        let currentPoints = manager.getPoints()
+        let xpToNextLevel = max(0, maxXP - currentPoints)
+        
+        Text("\(xpToNextLevel) XP to next level")
+            .Alata(size: 12, color: Color(red: 163/255, green: 167/255, blue: 174/255))
+    }
+}
+
+struct ProgressBarView2: View {
+    let maxWidth: CGFloat = UIScreen.main.bounds.width > 900 ? 960 : (UIScreen.main.bounds.width > 600 ? 760 : 340)
+    let maxValue: CGFloat = 500
+    var currentValue: CGFloat
+
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .fill(Color(red: 33/255, green: 37/255, blue: 54/255))
+                .frame(width: maxWidth, height: 10)
+                .cornerRadius(10)
+                .padding(.horizontal)
+
+            Rectangle()
+                .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
+                .frame(width: (currentValue / maxValue) * maxWidth, height: 10)
+                .cornerRadius(10)
+                .padding(.horizontal)
+                .animation(.easeInOut, value: currentValue)
+        }
     }
 }

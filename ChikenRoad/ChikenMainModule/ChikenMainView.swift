@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ChikenMainView: View {
     @StateObject var chikenMainModel =  ChikenMainViewModel()
+    let manager = UserDefaultsManager()
     
     var body: some View {
         ZStack {
@@ -33,28 +34,15 @@ struct ChikenMainView: View {
                                     
                                     Spacer()
                                     
-                                    Text("2/4 Tasks")
-                                        .Alata(size: 14, color: Color(red: 224/255, green: 187/255, blue: 75/255))
+                                    TasksProgressView()
                                 }
                                 .padding(.horizontal)
                                 
-                                ZStack(alignment: .leading) {
-                                    Rectangle()
-                                        .fill(Color(red: 33/255, green: 37/255, blue: 54/255))
-                                        .frame(width: 340, height: 10)
-                                        .cornerRadius(10)
-                                        .padding(.horizontal)
-                                    
-                                    Rectangle()
-                                        .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
-                                        .frame(width: 140, height: 10)
-                                        .cornerRadius(10)
-                                        .padding(.horizontal)
-                                }
+                                ProgressBarView()
                                 
                                 HStack {
                                     HStack {
-                                        if 1 == 1 {
+                                        if manager.readBoolValue1() {
                                             Image(systemName: "checkmark")
                                                 .font(.system(size: 16))
                                                 .foregroundStyle(Color(red: 100/255, green: 186/255, blue: 100/255))
@@ -71,7 +59,7 @@ struct ChikenMainView: View {
                                     Spacer()
                                     
                                     HStack {
-                                        if 1 == 1 {
+                                        if  manager.readBoolValue2() {
                                             Image(systemName: "checkmark")
                                                 .font(.system(size: 16))
                                                 .foregroundStyle(Color(red: 100/255, green: 186/255, blue: 100/255))
@@ -87,7 +75,7 @@ struct ChikenMainView: View {
                                     Spacer()
                                     
                                     HStack {
-                                        if 1 == 1 {
+                                        if manager.readBoolValue3() {
                                             Image(systemName: "checkmark")
                                                 .font(.system(size: 16))
                                                 .foregroundStyle(Color(red: 100/255, green: 186/255, blue: 100/255))
@@ -103,7 +91,7 @@ struct ChikenMainView: View {
                                     Spacer()
                                     
                                     HStack {
-                                        if 1 == 1 {
+                                        if manager.readBoolValue4() {
                                             Image(systemName: "checkmark")
                                                 .font(.system(size: 16))
                                                 .foregroundStyle(Color(red: 100/255, green: 186/255, blue: 100/255))
@@ -156,6 +144,9 @@ struct ChikenMainView: View {
                                 .frame(height: 148)
                                 .cornerRadius(16)
                                 .padding(.horizontal)
+                                .onTapGesture {
+                                    chikenMainModel.isProgress = true
+                                }
                             
                             Rectangle()
                                 .fill(Color(red: 61/255, green: 67/255, blue: 95/255))
@@ -187,6 +178,9 @@ struct ChikenMainView: View {
                                 .frame(height: 148)
                                 .cornerRadius(16)
                                 .padding(.horizontal)
+                                .onTapGesture {
+                                    chikenMainModel.isGallery = true
+                                }
                         }
                         
                         HStack(spacing: -10) {
@@ -220,6 +214,9 @@ struct ChikenMainView: View {
                                 .frame(height: 148)
                                 .cornerRadius(16)
                                 .padding(.horizontal)
+                                .onTapGesture {
+                                    chikenMainModel.isQuiz = true
+                                }
                             
                             Rectangle()
                                 .fill(Color(red: 61/255, green: 67/255, blue: 95/255))
@@ -251,6 +248,9 @@ struct ChikenMainView: View {
                                 .frame(height: 148)
                                 .cornerRadius(16)
                                 .padding(.horizontal)
+                                .onTapGesture {
+                                    chikenMainModel.isProfile = true
+                                }
                         }
                     }
                     .padding(.top)
@@ -276,8 +276,13 @@ struct ChikenMainView: View {
                                             Text("Tip of the Day")
                                                 .Alata(size: 16, color: Color(red: 224/255, green: 187/255, blue: 75/255))
                                             
-                                            Text("Adding crushed eggshells to chicken feed provides extra calcium for stronger eggshells.")
-                                                .Alata(size: 14)
+                                            Text(chikenMainModel.contact.chickenCareTips[chikenMainModel.currentIndex])
+                                                .Alata(size: 14, color: .white.opacity(0.7))
+                                                .minimumScaleFactor(0.8)
+                                                .lineLimit(4)
+                                                .onAppear {
+                                                    chikenMainModel.updateTipIfNeeded()
+                                                }
                                         }
                                         .padding(.horizontal)
                                     }
@@ -292,6 +297,18 @@ struct ChikenMainView: View {
             }
             .scrollDisabled(UIScreen.main.bounds.width > 380  ? true : false)
         }
+        .fullScreenCover(isPresented: $chikenMainModel.isProgress) {
+            ChikenProgressView()
+        }
+        .fullScreenCover(isPresented: $chikenMainModel.isGallery) {
+            ChikenGalleryView()
+        }
+        .fullScreenCover(isPresented: $chikenMainModel.isQuiz) {
+            ChikenKnowledgeView()
+        }
+        .fullScreenCover(isPresented: $chikenMainModel.isProfile) {
+            ChikenSettingsView()
+        }
     }
 }
 
@@ -299,3 +316,39 @@ struct ChikenMainView: View {
     ChikenMainView()
 }
 
+struct ProgressBarView: View {
+    @State var boolValues: [Bool] = [UserDefaultsManager().readBoolValue1(), UserDefaultsManager().readBoolValue2(), UserDefaultsManager().readBoolValue3(), UserDefaultsManager().readBoolValue4()]
+    
+    let maxWidth: CGFloat = UIScreen.main.bounds.width > 900 ? 960 : (UIScreen.main.bounds.width > 600 ? 760 : 340)
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .fill(Color(red: 33/255, green: 37/255, blue: 54/255))
+                .frame(width: maxWidth, height: 10)
+                .cornerRadius(10)
+                .padding(.horizontal)
+            
+            let trueCount = boolValues.filter { $0 }.count
+            let progressWidth = maxWidth * CGFloat(trueCount) / 4.0
+            
+            Rectangle()
+                .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
+                .frame(width: progressWidth, height: 10)
+                .cornerRadius(10)
+                .padding(.horizontal)
+        }
+    }
+}
+
+struct TasksProgressView: View {
+    @State var tasks: [Bool] = [UserDefaultsManager().readBoolValue1(), UserDefaultsManager().readBoolValue2(), UserDefaultsManager().readBoolValue3(), UserDefaultsManager().readBoolValue4()]
+    
+    var body: some View {
+        let completedCount = tasks.filter { $0 }.count
+        let totalCount = tasks.count
+        
+        Text("\(completedCount)/\(totalCount) Tasks")
+            .Alata(size: 14, color: Color(red: 224/255, green: 187/255, blue: 75/255))
+    }
+}

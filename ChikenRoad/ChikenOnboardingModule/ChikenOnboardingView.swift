@@ -13,7 +13,7 @@ struct ChikenOnboardingView: View {
                     if chikenOnboardingModel.currentIndex == 0 {
                         Image(.chikenOnb)
                             .resizable()
-                            .frame(width: 257, height: 269)
+                            .frame(width: UIScreen.main.bounds.width > 900 ? 430 : (UIScreen.main.bounds.width > 600 ? 430 : 257), height: UIScreen.main.bounds.width > 900 ? 430 : (UIScreen.main.bounds.width > 600 ? 430 : 260))
                     } else if chikenOnboardingModel.currentIndex == 1 {
                         HStack(spacing: 40) {
                             Circle()
@@ -34,7 +34,7 @@ struct ChikenOnboardingView: View {
                                 }
                                 .frame(width: 100, height: 100)
                         }
-                        .padding(.top, 169)
+                        .padding(.top, UIScreen.main.bounds.width > 900 ? 330 : (UIScreen.main.bounds.width > 600 ? 330 : 169))
                     } else {
                         Circle()
                             .fill(Color(red: 61/255, green: 67/255, blue: 95/255))
@@ -44,7 +44,7 @@ struct ChikenOnboardingView: View {
                                     .foregroundStyle(Color(red: 224/255, green: 187/255, blue: 75/255))
                             }
                             .frame(width: 100, height: 100)
-                            .padding(.top, 169)
+                            .padding(.top, UIScreen.main.bounds.width > 900 ? 330 : (UIScreen.main.bounds.width > 600 ? 330 : 169))
                     }
                     
                     VStack(spacing: 20) {
@@ -81,6 +81,7 @@ struct ChikenOnboardingView: View {
                                     chikenOnboardingModel.isNext = true
                                 }
                             }
+                            .padding(.top, UIScreen.main.bounds.width > 900 ? 390 : (UIScreen.main.bounds.width > 600 ? 250 : 0))
                         
                         HStack {
                             Circle()
@@ -100,6 +101,9 @@ struct ChikenOnboardingView: View {
                 }
             }
             .scrollDisabled(UIScreen.main.bounds.width > 380  ? true : false)
+        }
+        .fullScreenCover(isPresented: $chikenOnboardingModel.isNext) {
+            ChikenMainView()
         }
     }
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ChikenGalleryView: View {
     @StateObject var chikenGalleryModel = ChikenGalleryViewModel()
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
@@ -19,6 +20,10 @@ struct ChikenGalleryView: View {
                                     .foregroundStyle(.white)
                             )
                             .frame(width: 48, height: 48)
+                            .onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        
                         Text("Care Gallery")
                             .Alata(size: 24)
                         Spacer()
@@ -71,6 +76,9 @@ struct ChikenGalleryView: View {
                     .padding(.top)
                 }
             }
+        }
+        .onAppear() {
+            UserDefaultsManager().markAchievement2Done()
         }
     }
 }

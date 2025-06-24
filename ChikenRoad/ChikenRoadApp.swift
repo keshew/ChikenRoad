@@ -4,7 +4,14 @@ import SwiftUI
 struct ChikenRoadApp: App {
     var body: some Scene {
         WindowGroup {
-            ChikenOnboardingView()
+            if UserDefaultsManager().isFirstLaunch() {
+                ChikenOnboardingView()
+            } else {
+                ChikenMainView()
+                    .onAppear() {
+                        UserDefaultsManager().recordGameLaunchDate()
+                    }
+            }
         }
     }
 }

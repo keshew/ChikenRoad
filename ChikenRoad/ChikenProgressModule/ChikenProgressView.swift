@@ -2,7 +2,9 @@ import SwiftUI
 
 struct ChikenProgressView: View {
     @StateObject var chikenProgressModel =  ChikenProgressViewModel()
-    
+    @Environment(\.presentationMode) var presentationMode
+    let manager = UserDefaultsManager()
+    let achievementsDone = [UserDefaultsManager().isAchievement1Done(), UserDefaultsManager().isAchievement2Done(), UserDefaultsManager().isAchievement3Done(), UserDefaultsManager().isAchievement4Done()]
     var body: some View {
         ZStack {
             Color(red: 22/255, green: 24/255, blue: 34/255)
@@ -19,6 +21,9 @@ struct ChikenProgressView: View {
                                     .foregroundStyle(.white)
                             )
                             .frame(width: 48, height: 48)
+                            .onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }
                         
                         Text("Care Progress")
                             .Alata(size: 24)
@@ -53,19 +58,8 @@ struct ChikenProgressView: View {
                         .padding(.leading)
                         
                         VStack {
-                            ZStack(alignment: .leading) {
-                                Rectangle()
-                                    .fill(Color(red: 33/255, green: 37/255, blue: 54/255))
-                                    .frame(width: 340, height: 10)
-                                    .cornerRadius(10)
-                                    .padding(.horizontal)
-                                
-                                Rectangle()
-                                    .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
-                                    .frame(width: 140, height: 10)
-                                    .cornerRadius(10)
-                                    .padding(.horizontal, 5)
-                            }
+                            let completedCount = achievementsDone.filter { $0 }.count
+                            AchievementProgressBar(completedCount: completedCount)
                             
                             HStack {
                                 Text("Level 1")
@@ -85,7 +79,6 @@ struct ChikenProgressView: View {
                     .padding(.top)
                     
                     //MARK: - 1
-                    
                     VStack {
                         HStack {
                             Circle()
@@ -115,6 +108,13 @@ struct ChikenProgressView: View {
                         }
                         
                         VStack(spacing: 15) {
+                            let achievementsDone: [Bool] = [
+                                manager.isAchievement1Done(),
+                                manager.isAchievement2Done(),
+                                manager.isAchievement3Done(),
+                                manager.isAchievement4Done(),
+                                manager.isAchievement5Done()
+                            ]
                             ForEach(0..<chikenProgressModel.contact.arrayOfAchiev.count, id: \.self) { index in
                                 HStack {
                                     Rectangle()
@@ -135,13 +135,25 @@ struct ChikenProgressView: View {
                                                 
                                                 Spacer()
                                                 
-                                                Circle()
-                                                    .fill(Color(red: 100/255, green: 186/255, blue: 100/255))
-                                                    .overlay(content: {
-                                                        Image(systemName: "checkmark")
-                                                            .font(.system(size: 12))
-                                                    })
-                                                    .frame(width: 24, height: 24)
+                                                if achievementsDone[index] {
+                                                    Circle()
+                                                        .fill(Color(red: 100/255, green: 186/255, blue: 100/255))
+                                                        .overlay(content: {
+                                                            Image(systemName: "checkmark")
+                                                                .font(.system(size: 12))
+                                                        })
+                                                        .frame(width: 24, height: 24)
+
+                                                } else {
+                                                    Circle()
+                                                        .fill(Color(red: 43/255, green: 46/255, blue: 65/255))
+                                                        .overlay(content: {
+                                                            Image(systemName: "lock.fill")
+                                                                .font(.system(size: 12))
+                                                                .foregroundStyle(Color(red: 122/255, green: 124/255, blue: 131/255))
+                                                        })
+                                                        .frame(width: 24, height: 24)
+                                                }
                                             }
                                             .padding(.horizontal)
                                         }
@@ -381,4 +393,28 @@ struct ChikenProgressView: View {
 
 #Preview {
     ChikenProgressView()
+}
+
+struct AchievementProgressBar: View {
+    let completedCount: Int
+    let maxCount: Int = 10
+    let fullWidth: CGFloat = UIScreen.main.bounds.width > 900 ? 960 : (UIScreen.main.bounds.width > 600 ? 760 : 340)
+    let pointsPerAchievement: CGFloat = 10
+    
+    var body: some View {
+        ZStack(alignment: .leading) {
+            Rectangle()
+                .fill(Color(red: 33/255, green: 37/255, blue: 54/255))
+                .frame(width: fullWidth, height: 10)
+                .cornerRadius(10)
+                .padding(.horizontal)
+            
+            Rectangle()
+                .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
+                .frame(width: min(fullWidth, CGFloat(completedCount) * pointsPerAchievement), height: 10)
+                .cornerRadius(10)
+                .padding(.horizontal, 5)
+                .animation(.easeInOut, value: completedCount)
+        }
+    }
 }

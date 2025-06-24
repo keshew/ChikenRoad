@@ -2,7 +2,8 @@ import SwiftUI
 
 struct ChikenKnowledgeView: View {
     @StateObject var chikenKnowledgeModel =  ChikenKnowledgeViewModel()
-
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         ZStack {
             Color(red: 22/255, green: 24/255, blue: 34/255)
@@ -19,6 +20,9 @@ struct ChikenKnowledgeView: View {
                                     .foregroundStyle(.white)
                             )
                             .frame(width: 48, height: 48)
+                            .onTapGesture {
+                                presentationMode.wrappedValue.dismiss()
+                            }
                         
                         VStack(alignment: .leading) {
                             Text("Chicken Knowledge Quiz")
@@ -60,7 +64,7 @@ struct ChikenKnowledgeView: View {
                                     Spacer()
                                     
                                     VStack(alignment: .leading) {
-                                        Text("450")
+                                        Text("\(String(describing: UserDefaultsManager().getPoints()))")
                                             .Alata(size: 24, color: Color(red: 224/255, green: 187/255, blue: 75/255))
                                         
                                         Text("XP Points")
@@ -102,21 +106,26 @@ struct ChikenKnowledgeView: View {
                                     
                                     VStack {
                                         Circle()
-                                            .fill(Color(red: 100/255, green: 186/255, blue: 100/255))
+                                            .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
                                             .overlay {
-                                                Image(systemName: "checkmark")
+                                                Image(systemName: "play.fill")
                                             }
                                             .frame(width: 32, height: 32)
                                         
-                                        Text("Completed")
-                                            .Alata(size: 12, color: Color(red: 100/255, green: 186/255, blue: 100/255))
+                                        Text("Start")
+                                            .Alata(size: 12, color: Color(red: 224/255, green: 187/255, blue: 75/255))
                                     }
                                 }
                                 .padding(.horizontal)
+                                .padding(.trailing, 15)
                             }
                             .frame(height: 104)
                             .cornerRadius(16)
                             .padding(.horizontal)
+                            .onTapGesture {
+                                chikenKnowledgeModel.isQuiz = true
+                                UserDefaultsManager().saveBoolValue1(true)
+                            }
                         
                         Rectangle()
                             .fill(Color(red: 61/255, green: 67/255, blue: 95/255))
@@ -135,22 +144,25 @@ struct ChikenKnowledgeView: View {
                                     VStack {
                                         Circle()
                                             .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
-                                            .opacity(0.3)
                                             .overlay {
-                                              Text("1/2")
-                                                    .Alata(size: 12)
+                                                Image(systemName: "play.fill")
                                             }
                                             .frame(width: 32, height: 32)
                                         
-                                        Text("In Progress")
+                                        Text("Start")
                                             .Alata(size: 12, color: Color(red: 224/255, green: 187/255, blue: 75/255))
                                     }
                                 }
                                 .padding(.horizontal)
+                                .padding(.trailing, 15)
                             }
                             .frame(height: 104)
                             .cornerRadius(16)
                             .padding(.horizontal)
+                            .onTapGesture {
+                                chikenKnowledgeModel.isQuiz = true
+                                UserDefaultsManager().saveBoolValue2(true)
+                            }
                         
                         Rectangle()
                             .fill(Color(red: 61/255, green: 67/255, blue: 95/255))
@@ -184,6 +196,10 @@ struct ChikenKnowledgeView: View {
                             .frame(height: 104)
                             .cornerRadius(16)
                             .padding(.horizontal)
+                            .onTapGesture {
+                                chikenKnowledgeModel.isQuiz = true
+                                UserDefaultsManager().saveBoolValue3(true)
+                            }
                         
                         Rectangle()
                             .fill(Color(red: 61/255, green: 67/255, blue: 95/255))
@@ -217,10 +233,17 @@ struct ChikenKnowledgeView: View {
                             .frame(height: 104)
                             .cornerRadius(16)
                             .padding(.horizontal)
+                            .onTapGesture {
+                                chikenKnowledgeModel.isQuiz = true
+                                UserDefaultsManager().saveBoolValue4(true)
+                            }
                     }
                     .padding(.top, 5)
                 }
             }
+        }
+        .fullScreenCover(isPresented: $chikenKnowledgeModel.isQuiz) {
+            ChikenQuizView()
         }
     }
 }

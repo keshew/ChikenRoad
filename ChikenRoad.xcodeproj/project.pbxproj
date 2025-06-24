@@ -34,6 +34,7 @@
 		86CEE8DE2E0AF395006DD919 /* ChikenQuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8DA2E0AF395006DD919 /* ChikenQuizModel.swift */; };
 		86CEE8DF2E0AF395006DD919 /* ChikenQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8DB2E0AF395006DD919 /* ChikenQuizView.swift */; };
 		86CEE8E02E0AF395006DD919 /* ChikenQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8DC2E0AF395006DD919 /* ChikenQuizViewModel.swift */; };
+		86CEE8E82E0B027B006DD919 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8E52E0B027B006DD919 /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		86CEE8DA2E0AF395006DD919 /* ChikenQuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenQuizModel.swift; sourceTree = "<group>"; };
 		86CEE8DB2E0AF395006DD919 /* ChikenQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenQuizView.swift; sourceTree = "<group>"; };
 		86CEE8DC2E0AF395006DD919 /* ChikenQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenQuizViewModel.swift; sourceTree = "<group>"; };
+		86CEE8E52E0B027B006DD919 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		863172112E0971D9004BA21F /* ChikenRoad */ = {
 			isa = PBXGroup;
 			children = (
+				86CEE8E72E0B027B006DD919 /* Managers */,
 				86CEE8DD2E0AF395006DD919 /* ChikenQuizModule */,
 				86CEE8CF2E0AD8A1006DD919 /* ChikenKnowledgeModule */,
 				86CEE8B22E0AA614006DD919 /* ChikenProgressModule */,
@@ -234,6 +237,22 @@
 			path = ChikenQuizModule;
 			sourceTree = "<group>";
 		};
+		86CEE8E62E0B027B006DD919 /* UserDefaultsManager */ = {
+			isa = PBXGroup;
+			children = (
+				86CEE8E52E0B027B006DD919 /* UserDefaultsManager.swift */,
+			);
+			path = UserDefaultsManager;
+			sourceTree = "<group>";
+		};
+		86CEE8E72E0B027B006DD919 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				86CEE8E62E0B027B006DD919 /* UserDefaultsManager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -319,6 +338,7 @@
 				863172AE2E097298004BA21F /* ChikenOnboardingViewModel.swift in Sources */,
 				863172C82E098475004BA21F /* ChikenSettingsModel.swift in Sources */,
 				86CEE8DE2E0AF395006DD919 /* ChikenQuizModel.swift in Sources */,
+				86CEE8E82E0B027B006DD919 /* UserDefaultsManager.swift in Sources */,
 				86CEE8DF2E0AF395006DD919 /* ChikenQuizView.swift in Sources */,
 				86CEE8E02E0AF395006DD919 /* ChikenQuizViewModel.swift in Sources */,
 				863172C92E098475004BA21F /* ChikenSettingsView.swift in Sources */,
