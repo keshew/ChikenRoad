@@ -1,10 +1,12 @@
 import SwiftUI
 
-struct Gallery {
+struct Gallery: Identifiable, Codable {
+    var id = UUID()
     var title: String
     var text: String
     var isDone: Bool
 }
+
 struct ChikenGalleryModel {
     let arrayOfGallery = [Gallery(title: "How to clean a chicken coop", text: "📘 Clean 1-2 times a week. Remove the litter, wash the feeders, and ventilate the room.", isDone: false),
                           Gallery(title: "Prevention of lice and mites", text: "Sand baths with wood ash and dry cleaning are the best protection against parasites.", isDone: false),

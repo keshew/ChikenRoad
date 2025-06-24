@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ChikenGalleryView: View {
-    @StateObject var chikenGalleryModel =  ChikenGalleryViewModel()
+    @StateObject var chikenGalleryModel = ChikenGalleryViewModel()
     
     var body: some View {
         ZStack {
@@ -11,38 +11,32 @@ struct ChikenGalleryView: View {
             ScrollView(showsIndicators: false) {
                 VStack {
                     HStack {
-                        HStack {
-                            Circle()
-                                .fill(Color(red: 43/255, green: 46/255, blue: 65/255))
-                                .overlay {
-                                    Image(systemName: "arrow.left")
-                                        .font(.system(size: 20, weight: .bold))
-                                        .foregroundStyle(.white)
-                                }
-                                .frame(width: 48, height: 48)
-                            
-                            Text("Care Gallery")
-                                .Alata(size: 24)
-                        }
-                        .padding(.leading)
-                        
+                        Circle()
+                            .fill(Color(red: 43/255, green: 46/255, blue: 65/255))
+                            .overlay(
+                                Image(systemName: "arrow.left")
+                                    .font(.system(size: 20, weight: .bold))
+                                    .foregroundStyle(.white)
+                            )
+                            .frame(width: 48, height: 48)
+                        Text("Care Gallery")
+                            .Alata(size: 24)
                         Spacer()
                     }
+                    .padding(.leading)
                     
                     VStack(spacing: 15) {
-                        ForEach(0..<chikenGalleryModel.contact.arrayOfGallery.count, id: \.self) { index in
+                        ForEach(Array(chikenGalleryModel.arrayOfGallery.enumerated()), id: \.element.id) { index, item in
                             Rectangle()
                                 .fill(Color(red: 61/255, green: 67/255, blue: 95/255))
-                                .overlay {
+                                .overlay(
                                     HStack(alignment: .top) {
                                         VStack(alignment: .leading) {
-                                            Text(chikenGalleryModel.contact.arrayOfGallery[index].title)
+                                            Text(item.title)
                                                 .Alata(size: 18)
                                                 .minimumScaleFactor(0.8)
-                                            
                                             Spacer()
-                                            
-                                            Text(chikenGalleryModel.contact.arrayOfGallery[index].text)
+                                            Text(item.text)
                                                 .Alata(size: 14, color: Color(red: 163/255, green: 167/255, blue: 174/255))
                                                 .minimumScaleFactor(0.8)
                                         }
@@ -55,21 +49,20 @@ struct ChikenGalleryView: View {
                                             Circle()
                                                 .fill(Color(red: 224/255, green: 187/255, blue: 75/255))
                                                 .opacity(0.15)
-                                                .overlay {
-                                                    Image(systemName: chikenGalleryModel.contact.arrayOfGallery[index].isDone ? "bookmark.fill" : "bookmark")
+                                                .overlay(
+                                                    Image(systemName: item.isDone ? "bookmark.fill" : "bookmark")
                                                         .font(.system(size: 20))
                                                         .foregroundStyle(Color(red: 224/255, green: 187/255, blue: 75/255))
                                                         .onTapGesture {
-                                                            
+                                                            chikenGalleryModel.toggleDone(for: index)
                                                         }
-                                                }
+                                                )
                                                 .frame(width: 48, height: 48)
-                                            
                                         }
                                         .padding(.trailing)
                                         .padding(.vertical)
                                     }
-                                }
+                                )
                                 .frame(height: 108)
                                 .cornerRadius(16)
                                 .padding(.horizontal)

@@ -25,6 +25,15 @@
 		8631734B2E099262004BA21F /* ChikenGalleryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863173472E099262004BA21F /* ChikenGalleryModel.swift */; };
 		8631734C2E099262004BA21F /* ChikenGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863173482E099262004BA21F /* ChikenGalleryView.swift */; };
 		8631734D2E099262004BA21F /* ChikenGalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863173492E099262004BA21F /* ChikenGalleryViewModel.swift */; };
+		86CEE8B32E0AA614006DD919 /* ChikenProgressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8AF2E0AA614006DD919 /* ChikenProgressModel.swift */; };
+		86CEE8B42E0AA614006DD919 /* ChikenProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8B02E0AA614006DD919 /* ChikenProgressView.swift */; };
+		86CEE8B52E0AA614006DD919 /* ChikenProgressViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8B12E0AA614006DD919 /* ChikenProgressViewModel.swift */; };
+		86CEE8D02E0AD8A1006DD919 /* ChikenKnowledgeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8CC2E0AD8A1006DD919 /* ChikenKnowledgeModel.swift */; };
+		86CEE8D12E0AD8A1006DD919 /* ChikenKnowledgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8CD2E0AD8A1006DD919 /* ChikenKnowledgeView.swift */; };
+		86CEE8D22E0AD8A1006DD919 /* ChikenKnowledgeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8CE2E0AD8A1006DD919 /* ChikenKnowledgeViewModel.swift */; };
+		86CEE8DE2E0AF395006DD919 /* ChikenQuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8DA2E0AF395006DD919 /* ChikenQuizModel.swift */; };
+		86CEE8DF2E0AF395006DD919 /* ChikenQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8DB2E0AF395006DD919 /* ChikenQuizView.swift */; };
+		86CEE8E02E0AF395006DD919 /* ChikenQuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CEE8DC2E0AF395006DD919 /* ChikenQuizViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +57,15 @@
 		863173472E099262004BA21F /* ChikenGalleryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenGalleryModel.swift; sourceTree = "<group>"; };
 		863173482E099262004BA21F /* ChikenGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenGalleryView.swift; sourceTree = "<group>"; };
 		863173492E099262004BA21F /* ChikenGalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenGalleryViewModel.swift; sourceTree = "<group>"; };
+		86CEE8AF2E0AA614006DD919 /* ChikenProgressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenProgressModel.swift; sourceTree = "<group>"; };
+		86CEE8B02E0AA614006DD919 /* ChikenProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenProgressView.swift; sourceTree = "<group>"; };
+		86CEE8B12E0AA614006DD919 /* ChikenProgressViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenProgressViewModel.swift; sourceTree = "<group>"; };
+		86CEE8CC2E0AD8A1006DD919 /* ChikenKnowledgeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenKnowledgeModel.swift; sourceTree = "<group>"; };
+		86CEE8CD2E0AD8A1006DD919 /* ChikenKnowledgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenKnowledgeView.swift; sourceTree = "<group>"; };
+		86CEE8CE2E0AD8A1006DD919 /* ChikenKnowledgeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenKnowledgeViewModel.swift; sourceTree = "<group>"; };
+		86CEE8DA2E0AF395006DD919 /* ChikenQuizModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenQuizModel.swift; sourceTree = "<group>"; };
+		86CEE8DB2E0AF395006DD919 /* ChikenQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenQuizView.swift; sourceTree = "<group>"; };
+		86CEE8DC2E0AF395006DD919 /* ChikenQuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChikenQuizViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +131,9 @@
 		863172112E0971D9004BA21F /* ChikenRoad */ = {
 			isa = PBXGroup;
 			children = (
+				86CEE8DD2E0AF395006DD919 /* ChikenQuizModule */,
+				86CEE8CF2E0AD8A1006DD919 /* ChikenKnowledgeModule */,
+				86CEE8B22E0AA614006DD919 /* ChikenProgressModule */,
 				8631734A2E099262004BA21F /* ChikenGalleryModule */,
 				863172C72E098475004BA21F /* ChikenSettingsModule */,
 				863172B92E09781C004BA21F /* ChikenMainModule */,
@@ -181,6 +202,36 @@
 				863173492E099262004BA21F /* ChikenGalleryViewModel.swift */,
 			);
 			path = ChikenGalleryModule;
+			sourceTree = "<group>";
+		};
+		86CEE8B22E0AA614006DD919 /* ChikenProgressModule */ = {
+			isa = PBXGroup;
+			children = (
+				86CEE8AF2E0AA614006DD919 /* ChikenProgressModel.swift */,
+				86CEE8B02E0AA614006DD919 /* ChikenProgressView.swift */,
+				86CEE8B12E0AA614006DD919 /* ChikenProgressViewModel.swift */,
+			);
+			path = ChikenProgressModule;
+			sourceTree = "<group>";
+		};
+		86CEE8CF2E0AD8A1006DD919 /* ChikenKnowledgeModule */ = {
+			isa = PBXGroup;
+			children = (
+				86CEE8CC2E0AD8A1006DD919 /* ChikenKnowledgeModel.swift */,
+				86CEE8CD2E0AD8A1006DD919 /* ChikenKnowledgeView.swift */,
+				86CEE8CE2E0AD8A1006DD919 /* ChikenKnowledgeViewModel.swift */,
+			);
+			path = ChikenKnowledgeModule;
+			sourceTree = "<group>";
+		};
+		86CEE8DD2E0AF395006DD919 /* ChikenQuizModule */ = {
+			isa = PBXGroup;
+			children = (
+				86CEE8DA2E0AF395006DD919 /* ChikenQuizModel.swift */,
+				86CEE8DB2E0AF395006DD919 /* ChikenQuizView.swift */,
+				86CEE8DC2E0AF395006DD919 /* ChikenQuizViewModel.swift */,
+			);
+			path = ChikenQuizModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +318,17 @@
 				863172AD2E097298004BA21F /* ChikenOnboardingView.swift in Sources */,
 				863172AE2E097298004BA21F /* ChikenOnboardingViewModel.swift in Sources */,
 				863172C82E098475004BA21F /* ChikenSettingsModel.swift in Sources */,
+				86CEE8DE2E0AF395006DD919 /* ChikenQuizModel.swift in Sources */,
+				86CEE8DF2E0AF395006DD919 /* ChikenQuizView.swift in Sources */,
+				86CEE8E02E0AF395006DD919 /* ChikenQuizViewModel.swift in Sources */,
 				863172C92E098475004BA21F /* ChikenSettingsView.swift in Sources */,
 				863172CA2E098475004BA21F /* ChikenSettingsViewModel.swift in Sources */,
+				86CEE8D02E0AD8A1006DD919 /* ChikenKnowledgeModel.swift in Sources */,
+				86CEE8D12E0AD8A1006DD919 /* ChikenKnowledgeView.swift in Sources */,
+				86CEE8D22E0AD8A1006DD919 /* ChikenKnowledgeViewModel.swift in Sources */,
+				86CEE8B32E0AA614006DD919 /* ChikenProgressModel.swift in Sources */,
+				86CEE8B42E0AA614006DD919 /* ChikenProgressView.swift in Sources */,
+				86CEE8B52E0AA614006DD919 /* ChikenProgressViewModel.swift in Sources */,
 				8631721E2E0971F7004BA21F /* ChikenTextExtension.swift in Sources */,
 				863172122E0971D9004BA21F /* ChickenCustomButtons.swift in Sources */,
 				863172132E0971D9004BA21F /* ChikenRoadApp.swift in Sources */,
